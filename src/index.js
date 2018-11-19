@@ -1,14 +1,27 @@
-import counterInIndexJs, { inc } from './first-module'
-// when using export default we can name imported value as we want
+import { inc, dec, getCounter } from './counter'
 
-const Puszek = "Puszek <3"
+const incBtn = document.createElement('button')
+const decBtn = document.createElement('button')
+const counter = document.createElement('p')
 
-console.log(Puszek)
+incBtn.innerText = '+'
+decBtn.innerText = '-'
+counter.innerText = 0
 
-console.log(counterInIndexJs)
+incBtn.addEventListener('click', () => {
+    inc()
+    updateCounter()
+})
 
-console.log(inc)
+decBtn.addEventListener('click', () => {
+    dec()
+    updateCounter()
+})
 
-inc()
+const updateCounter = () => {
+    counter.innerText = (getCounter())
+}
 
-console.log(counterInIndexJs)
+document.body.appendChild(counter)
+document.body.appendChild(decBtn)
+document.body.appendChild(incBtn)
