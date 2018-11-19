@@ -1,12 +1,14 @@
-import './first-module'
-import './first-module'
-import './first-module'
+import counterInIndexJs, { inc } from './first-module'
+// when using export default we can name imported value as we want
 
 const Puszek = "Puszek <3"
 
 console.log(Puszek)
 
+console.log(counterInIndexJs)
 
-console.log(this)
+console.log(inc)
 
-console.log(counter)
+inc()
+
+console.log(counterInIndexJs)
